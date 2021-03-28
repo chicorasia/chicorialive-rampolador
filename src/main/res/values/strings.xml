@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rampolador</string>
+    <string name="inclinacao_media">Inclinação média:</string>
+    <string name="desnivel">Desnível (m)</string>
+</resources>
