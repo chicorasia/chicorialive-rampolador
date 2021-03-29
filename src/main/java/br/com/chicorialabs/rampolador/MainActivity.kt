@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObserver() {
         mViewModel.inclinacao.observe(this, { inclinacaoCalculada: Double? ->
-            inclinacaoTxt.text = "i: " + inclinacaoCalculada?.formataInclinacao() + "%"
+            inclinacaoTxt.text = "i: ${inclinacaoCalculada?.formataInclinacao()} %"
         })
     }
 
@@ -54,14 +54,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun initComprimentoSld() {
         comprimentoSld.addOnChangeListener { _, value, _ ->
-            mViewModel.comprimento.postValue(value.toDouble())
+            mViewModel.comprimento.value = value.toDouble()
             mViewModel.atualizaInclinacao()
         }
     }
 
     private fun initDesnivelSld() {
         desnivelSld.addOnChangeListener { _, value, _ ->
-            mViewModel.desnivel.postValue(value.toDouble())
+            mViewModel.desnivel.value = value.toDouble()
             mViewModel.atualizaInclinacao()
         }
     }

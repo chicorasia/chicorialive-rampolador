@@ -20,7 +20,7 @@ class MainViewModel : ViewModel() {
     fun atualizaInclinacao() {
         val dH = desnivel.value
         val dL = comprimento.value
-        inclinacao.postValue(calculador.calculaInclinacao(dH, dL))
+        inclinacao.value = calculador.calculaInclinacao(dH, dL)
     }
 
 }

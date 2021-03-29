@@ -13,10 +13,6 @@ class Calculador {
         }
 
         return Double.POSITIVE_INFINITY
-
-
-
-
     }
 
 }
