@@ -9,7 +9,9 @@ Na segunda sessão em vídeo, empregamos conceitos de TDD para adicionar funcion
 Mockup: https://docs.google.com/presentation/d/1Tk2C7fN-p5QNThG9lUW6IurxV0--kg4QeERMJhyZIZU/edit?usp=sharing
 
 Vídeo (1a sessão): https://youtu.be/OmwfcqJpjYE :vhs: 
+
 Vídeo (2a sessão): https://youtu.be/JnVnYsJoLdY :vhs:
+
 Vídeo (2a sessão - conclusão): https://youtu.be/ROFFxqlavmA :vhs:
 
 ****
