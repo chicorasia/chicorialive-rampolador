@@ -1,5 +1,6 @@
 package br.com.chicorialabs.rampolador
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import br.com.chicorialabs.rampolador.extension.formataInclinacao
 import br.com.chicorialabs.rampolador.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding
 
@@ -24,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         binding.mainComprimentoSld
     }
 
+    private val comentarioTxt by lazy {
+        binding.mainResultadoComentarioTxt
+    }
+
     lateinit private var mViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,24 +38,25 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         initViewModel()
         initDesnivelSld()
         initComprimentoSld()
         initObserver()
-
 
     }
 
     private fun initObserver() {
         mViewModel.inclinacao.observe(this, { inclinacaoCalculada: Double? ->
             inclinacaoTxt.text = "i: ${inclinacaoCalculada?.formataInclinacao()} %"
+            comentarioTxt.text = mViewModel.classificacaoRampa.value?.classificacao
+            binding.root.setBackgroundColor(getColor(mViewModel.classificacaoRampa.value?.cor
+                ?: R.color.piso_plano))
         })
     }
 
     private fun initViewModel() {
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        Toast.makeText(this, mViewModel.toString(), Toast.LENGTH_LONG).show()
     }
 
     private fun initComprimentoSld() {
